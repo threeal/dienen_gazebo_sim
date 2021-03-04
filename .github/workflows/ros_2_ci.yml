@@ -1,0 +1,25 @@
+name: ROS 2 CI
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+    steps:
+      - name: Setup ROS 2
+        uses: ros-tooling/setup-ros@0.1.2
+        with:
+          required-ros-distributions: rolling
+      - name: Run Tests
+        uses: ros-tooling/action-ros-ci@0.1.2
+        with:
+          package-name: dienen_gazebo_sim
+          target-ros2-distro: rolling
