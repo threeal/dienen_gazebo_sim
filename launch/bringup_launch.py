@@ -23,6 +23,7 @@ import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import ExecuteProcess
+from launch_ros.actions import Node
 from scripts import GazeboRosPaths
 
 
@@ -35,15 +36,34 @@ def generate_launch_description():
         'GAZEBO_RESOURCE_PATH': media_path,
     }
 
-    world_prefix = get_package_share_directory('dienen_gazebo_sim')
-    world_file = os.path.join(world_prefix, 'worlds', 'default.sdl')
+    package_prefix = get_package_share_directory('dienen_gazebo_sim')
+
+    world_file = os.path.join(package_prefix, 'worlds', 'default.sdf')
+    robot_file = os.path.join(package_prefix, 'models', 'robot.sdf')
 
     return LaunchDescription(
         [
             ExecuteProcess(
-                cmd=['gazebo', world_file],
+                cmd=[
+                    'gazebo',
+                    '-s',
+                    'libgazebo_ros_init.so',
+                    '-s',
+                    'libgazebo_ros_factory.so',
+                    world_file
+                ],
                 output='screen',
                 additional_env=env,
-            )
+            ),
+            Node(
+                package="gazebo_ros",
+                executable="spawn_entity.py",
+                arguments=[
+                    "-entity",
+                    "robot",
+                    "-file",
+                    robot_file,
+                ],
+            ),
         ]
     )

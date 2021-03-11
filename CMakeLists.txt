@@ -4,7 +4,7 @@ project(dienen_gazebo_sim)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY launch worlds
+install(DIRECTORY launch meshes models worlds
   DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
