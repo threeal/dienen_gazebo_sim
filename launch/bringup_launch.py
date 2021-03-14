@@ -35,8 +35,8 @@ def generate_launch_description():
         'GAZEBO_RESOURCE_PATH': media_path,
     }
 
-    world_prefix = get_package_share_directory('dienen_gazebo_sim')
-    world_file = os.path.join(world_prefix, 'worlds', 'default.sdl')
+    package_prefix = get_package_share_directory('dienen_sim')
+    world_file = os.path.join(package_prefix, 'worlds', 'default.sdf')
 
     return LaunchDescription(
         [
@@ -44,6 +44,6 @@ def generate_launch_description():
                 cmd=['gazebo', world_file],
                 output='screen',
                 additional_env=env,
-            )
+            ),
         ]
     )

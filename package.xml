@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>dienen_gazebo_sim</name>
+  <name>dienen_sim</name>
   <version>0.1.0</version>
-  <description>Gazebo simulation environment for Dienen assistive robot</description>
+  <description>Simulation environment for Dienen assistive robot</description>
   <maintainer email="alfi.maulana.f@gmail.com">Alfi Maulana</maintainer>
   <license>MIT License</license>
 
@@ -12,11 +12,13 @@
   <exec_depend>ament_index_python</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>ros2run</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/.." />
   </export>
 </package>

@@ -1,19 +1,14 @@
 <?xml version="1.0"?>
-<sdf version="1.4">
+<sdf version="1.5">
   <world name="default">
     <include>
-      <uri>model://ground_plane</uri>
+      <uri>model://dienen_sim/models/sun</uri>
     </include>
     <include>
-      <uri>model://sun</uri>
+      <uri>model://dienen_sim/models/floor</uri>
     </include>
-    <light name="spotlight" type="spot">
-      <pose>0 0 10  0 0 0</pose>
-      <spot>
-        <inner_angle>0.6</inner_angle>
-        <outer_angle>2.0</outer_angle>
-        <falloff>1.0</falloff>
-      </spot>
-    </light>
+    <include>
+      <uri>model://dienen_sim/models/dienen</uri>
+    </include>
   </world>
 </sdf>
