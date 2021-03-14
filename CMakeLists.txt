@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(dienen_gazebo_sim)
+project(dienen_sim)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY launch meshes models worlds
+install(DIRECTORY launch models worlds
   DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
