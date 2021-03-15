@@ -14,6 +14,4 @@ jobs:
       - name: Checking out
         uses: actions/checkout@v2.3.4
       - name: Building and testing
-        uses: threeal/ros2-ci@v0.2.2
-        with:
-          ros2-distro: rolling
+        uses: threeal/ros2-ci@v0.4.0
