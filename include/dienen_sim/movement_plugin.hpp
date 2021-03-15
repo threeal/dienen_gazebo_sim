@@ -23,6 +23,8 @@
 
 #include <gazebo/common/Plugin.hh>
 #include <rclcpp/rclcpp.hpp>
+#include <tosshin_interfaces/msg/maneuver.hpp>
+#include <tosshin_interfaces/srv/configure_maneuver.hpp>
 
 #include <map>
 #include <string>
@@ -42,7 +44,17 @@ private:
 
   rclcpp::Node::SharedPtr node;
 
+  rclcpp::Publisher<tosshin_interfaces::msg::Maneuver>::SharedPtr
+    maneuver_event_publisher;
+
+  rclcpp::Service<tosshin_interfaces::srv::ConfigureManeuver>::SharedPtr
+    configure_maneuver_service;
+
   std::map<std::string, gazebo::physics::JointPtr> joints;
+
+  float forward;
+  float right;
+  float yaw;
 };
 
 }  // namespace dienen_sim

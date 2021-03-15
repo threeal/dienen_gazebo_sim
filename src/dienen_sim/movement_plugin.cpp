@@ -19,8 +19,11 @@
 // THE SOFTWARE.
 
 #include "dienen_sim/movement_plugin.hpp"
+
 #include <gazebo/physics/physics.hh>
 #include <gazebo_ros/node.hpp>
+
+#include <string>
 
 namespace dienen_sim
 {
@@ -31,19 +34,102 @@ MovementPlugin::MovementPlugin()
 
 void MovementPlugin::Load(gazebo::physics::ModelPtr model, sdf::ElementPtr sdf)
 {
-  node = gazebo_ros::Node::Get(sdf);
-
-  for (auto const & joint : model->GetJoints()) {
-    joints[joint->GetName()] = joint;
+  // Initialize the node
+  {
+    node = gazebo_ros::Node::Get(sdf);
+    RCLCPP_INFO_STREAM(
+      node->get_logger(),
+      "Node initialized with name " << node->get_name() << "!"
+    );
   }
 
-  if (joints.size() > 0) {
-    RCLCPP_INFO(node->get_logger(), "Found joints:");
-    for (auto const & joint : joints) {
-      RCLCPP_INFO_STREAM(node->get_logger(), joint.first);
+  // Initialize the maneuver event publisher
+  {
+    using Maneuver = tosshin_interfaces::msg::Maneuver;
+    maneuver_event_publisher = node->create_publisher<Maneuver>(
+      std::string(node->get_name()) + "/maneuver_event", 10
+    );
+
+    RCLCPP_INFO_STREAM(
+      node->get_logger(),
+      "Maneuver event publisher initialized on " <<
+        maneuver_event_publisher->get_topic_name() << "!"
+    );
+  }
+
+  // Initialize the configure maneuver service
+  {
+    using ConfigureManeuver = tosshin_interfaces::srv::ConfigureManeuver;
+    configure_maneuver_service = node->create_service<ConfigureManeuver>(
+      std::string(node->get_name()) + "/configure_maneuver",
+      [this](ConfigureManeuver::Request::SharedPtr request,
+      ConfigureManeuver::Response::SharedPtr response) {
+        bool configured = false;
+
+        if (request->maneuver.forward.size() > 0) {
+          forward = request->maneuver.forward[0];
+          response->maneuver.forward.push_back(forward);
+
+          configured = true;
+          RCLCPP_DEBUG_STREAM(
+            node->get_logger(),
+            "Forward maneuver configured into " << forward << "!"
+          );
+        }
+
+        if (request->maneuver.right.size() > 0) {
+          right = request->maneuver.right[0];
+          response->maneuver.right.push_back(right);
+
+          configured = true;
+          RCLCPP_DEBUG_STREAM(
+            node->get_logger(),
+            "Right maneuver configured into " << right << "!"
+          );
+        }
+
+        if (request->maneuver.yaw.size() > 0) {
+          yaw = request->maneuver.yaw[0];
+          response->maneuver.yaw.push_back(yaw);
+
+          configured = true;
+          RCLCPP_DEBUG_STREAM(
+            node->get_logger(),
+            "Yaw maneuver configured into " << yaw << "!"
+          );
+        }
+
+        if (configured) {
+          maneuver_event_publisher->publish(response->maneuver);
+        } else {
+          response->maneuver.forward.push_back(forward);
+          response->maneuver.right.push_back(right);
+          response->maneuver.yaw.push_back(yaw);
+        }
+      }
+    );
+
+    RCLCPP_INFO_STREAM(
+      node->get_logger(),
+      "Configure maneuver service initialized on " <<
+        configure_maneuver_service->get_service_name() << "!"
+    );
+  }
+
+  // Initialize the joints
+  {
+    for (auto const & joint : model->GetJoints()) {
+      joints[joint->GetName()] = joint;
     }
-  } else {
-    RCLCPP_WARN(node->get_logger(), "No joints were found!");
+
+    if (joints.size() > 0) {
+      RCLCPP_INFO(node->get_logger(), "Found joints:");
+      for (auto const & joint : joints) {
+        RCLCPP_INFO_STREAM(node->get_logger(), "- " << joint.first);
+      }
+    } else {
+      RCLCPP_WARN(node->get_logger(), "No joints were found!");
+    }
   }
 }
 

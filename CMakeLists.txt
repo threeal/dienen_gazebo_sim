@@ -2,9 +2,22 @@ cmake_minimum_required(VERSION 3.5)
 
 project(dienen_sim)
 
+if(NOT CMAKE_C_STANDARD)
+  set(CMAKE_C_STANDARD 99)
+endif()
+
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 14)
+endif()
+
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
+
 find_package(ament_cmake REQUIRED)
 find_package(gazebo_ros REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(tosshin_interfaces REQUIRED)
 
 add_library(movement_plugin SHARED
   "src/dienen_sim/movement_plugin.cpp")
@@ -13,7 +26,10 @@ target_include_directories(movement_plugin PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 
-ament_target_dependencies(movement_plugin gazebo_ros rclcpp)
+ament_target_dependencies(movement_plugin
+  gazebo_ros
+  rclcpp
+  tosshin_interfaces)
 
 install(TARGETS movement_plugin
   DESTINATION "share/${PROJECT_NAME}/plugins")
