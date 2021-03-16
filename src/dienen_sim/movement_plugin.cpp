@@ -24,11 +24,16 @@
 #include <gazebo_ros/node.hpp>
 
 #include <string>
+#include <utility>
 
 namespace dienen_sim
 {
+const double PI = atan(1) * 4;
 
 MovementPlugin::MovementPlugin()
+: forward(0.0),
+  left(0.0),
+  yaw(0.0)
 {
 }
 
@@ -77,14 +82,14 @@ void MovementPlugin::Load(gazebo::physics::ModelPtr model, sdf::ElementPtr sdf)
           );
         }
 
-        if (request->maneuver.right.size() > 0) {
-          right = request->maneuver.right[0];
-          response->maneuver.right.push_back(right);
+        if (request->maneuver.left.size() > 0) {
+          left = request->maneuver.left[0];
+          response->maneuver.left.push_back(left);
 
           configured = true;
           RCLCPP_DEBUG_STREAM(
             node->get_logger(),
-            "Right maneuver configured into " << right << "!"
+            "Left maneuver configured into " << left << "!"
           );
         }
 
@@ -103,7 +108,7 @@ void MovementPlugin::Load(gazebo::physics::ModelPtr model, sdf::ElementPtr sdf)
           maneuver_event_publisher->publish(response->maneuver);
         } else {
           response->maneuver.forward.push_back(forward);
-          response->maneuver.right.push_back(right);
+          response->maneuver.left.push_back(left);
           response->maneuver.yaw.push_back(yaw);
         }
       }
@@ -116,25 +121,51 @@ void MovementPlugin::Load(gazebo::physics::ModelPtr model, sdf::ElementPtr sdf)
     );
   }
 
-  // Initialize the joints
+  // Initialize the update connection
   {
-    for (auto const & joint : model->GetJoints()) {
-      joints[joint->GetName()] = joint;
-    }
+    this->model = model;
+    world = this->model->GetWorld();
 
-    if (joints.size() > 0) {
-      RCLCPP_INFO(node->get_logger(), "Found joints:");
-      for (auto const & joint : joints) {
-        RCLCPP_INFO_STREAM(node->get_logger(), "- " << joint.first);
-      }
-    } else {
-      RCLCPP_WARN(node->get_logger(), "No joints were found!");
-    }
+    last_time = world->SimTime();
+
+    update_connection = gazebo::event::Events::ConnectWorldUpdateBegin(
+      std::bind(&MovementPlugin::Update, this)
+    );
+
+    RCLCPP_INFO(node->get_logger(), "Connected to the world update!");
   }
 }
 
 void MovementPlugin::Update()
 {
+  auto current_time = world->SimTime();
+  auto delta_time = (current_time - last_time).Double();
+
+  // Set the velocity
+  {
+    auto angle = model->RelativePose().Rot().Yaw();
+    auto linear_velocity = ignition::math::Vector3d(
+      forward * cos(angle) + left * sin(angle),
+      forward * sin(angle) + left * cos(angle),
+      0.0
+    );
+
+    model->SetLinearVel(linear_velocity * delta_time * 100.0);
+    model->SetAngularVel({0.0, 0.0, yaw * delta_time * 100.0});
+  }
+
+  // Lock the pitch and the roll rotation
+  {
+    auto pose = model->RelativePose();
+    auto rot = pose.Rot();
+
+    rot.Euler(0.0, 0.0, rot.Yaw());
+    pose.Set(pose.Pos(), rot);
+
+    model->SetRelativePose(pose);
+  }
+
+  last_time = current_time;
 }
 
 GZ_REGISTER_MODEL_PLUGIN(MovementPlugin)

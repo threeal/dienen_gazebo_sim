@@ -42,6 +42,10 @@ public:
 private:
   void Update();
 
+  double forward;
+  double left;
+  double yaw;
+
   rclcpp::Node::SharedPtr node;
 
   rclcpp::Publisher<tosshin_interfaces::msg::Maneuver>::SharedPtr
@@ -50,11 +54,12 @@ private:
   rclcpp::Service<tosshin_interfaces::srv::ConfigureManeuver>::SharedPtr
     configure_maneuver_service;
 
-  std::map<std::string, gazebo::physics::JointPtr> joints;
+  gazebo::physics::ModelPtr model;
+  gazebo::physics::WorldPtr world;
 
-  float forward;
-  float right;
-  float yaw;
+  gazebo::common::Time last_time;
+
+  gazebo::event::ConnectionPtr update_connection;
 };
 
 }  // namespace dienen_sim
