@@ -41,7 +41,15 @@ def generate_launch_description():
     return LaunchDescription(
         [
             ExecuteProcess(
-                cmd=['gazebo', world_file],
+                cmd=[
+                    'gazebo',
+                    '-s',
+                    'libgazebo_ros_init.so',
+                    "-s",
+                    "libgazebo_ros_factory.so",
+                    '--verbose',
+                    world_file
+                ],
                 output='screen',
                 additional_env=env,
             ),

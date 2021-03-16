@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="dienen">
+    <plugin name='movement' filename='libmovement_plugin.so'>
+    </plugin>
     <link name="base">
       <pose>0 0 0.5 0 0 0</pose>
       <inertial>
@@ -19,7 +21,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen_sim/models/dienen/meshes/base.dae</uri>
+            <uri>model://dienen/meshes/base.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -27,13 +29,13 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen_sim/models/dienen/meshes/base.dae</uri>
+            <uri>model://dienen/meshes/base.dae</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
     <link name="wheel_0">
-      <pose>0 0.5 0.3 1.5708 0 0</pose>
+      <pose>0.25 0.433013 0.3 1.5708 0 2.61799</pose>
       <inertial>
         <inertia>
           <ixx>0.001000</ixx>
@@ -49,7 +51,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen_sim/models/dienen/meshes/wheel.dae</uri>
+            <uri>model://dienen/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -75,7 +77,7 @@
       </collision>
     </link>
     <link name="wheel_1">
-      <pose>-0.433013 -0.25 0.3 1.5708 0 2.0944</pose>
+      <pose>-0.5 0 0.3 1.5708 0 -1.5708</pose>
       <inertial>
         <inertia>
           <ixx>0.001000</ixx>
@@ -91,7 +93,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen_sim/models/dienen/meshes/wheel.dae</uri>
+            <uri>model://dienen/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -117,7 +119,7 @@
       </collision>
     </link>
     <link name="wheel_2">
-      <pose>0.433013 -0.25 0.3 1.5708 0 4.18879</pose>
+      <pose>0.25 -0.433013 0.3 1.5708 0 0.523599</pose>
       <inertial>
         <inertia>
           <ixx>0.001000</ixx>
@@ -133,7 +135,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen_sim/models/dienen/meshes/wheel.dae</uri>
+            <uri>model://dienen/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -162,7 +164,7 @@
       <parent>base</parent>
       <child>wheel_0</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0.5 0.866026 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
@@ -170,7 +172,7 @@
       <parent>base</parent>
       <child>wheel_1</child>
       <axis>
-        <xyz>-0.866026 -0.5 0</xyz>
+        <xyz>-1 0 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
@@ -178,7 +180,7 @@
       <parent>base</parent>
       <child>wheel_2</child>
       <axis>
-        <xyz>-0.866026 0.5 0</xyz>
+        <xyz>0.5 -0.866026 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>

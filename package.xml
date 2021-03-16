@@ -6,19 +6,17 @@
   <description>Simulation environment for Dienen assistive robot</description>
   <maintainer email="alfi.maulana.f@gmail.com">Alfi Maulana</maintainer>
   <license>MIT License</license>
-
   <buildtool_depend>ament_cmake</buildtool_depend>
-
+  <depend>gazebo_ros</depend>
+  <depend>rclcpp</depend>
+  <depend>tosshin_interfaces</depend>
   <exec_depend>ament_index_python</exec_depend>
   <exec_depend>launch</exec_depend>
-  <exec_depend>ros2run</exec_depend>
-  <exec_depend>gazebo_ros</exec_depend>
-
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
-
   <export>
     <build_type>ament_cmake</build_type>
-    <gazebo_ros gazebo_model_path="${prefix}/.." />
+    <gazebo_ros gazebo_model_path="${prefix}/models" />
+    <gazebo_ros plugin_path="${prefix}/plugins" />
   </export>
 </package>
