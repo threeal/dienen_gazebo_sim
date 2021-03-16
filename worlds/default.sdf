@@ -2,13 +2,13 @@
 <sdf version="1.5">
   <world name="default">
     <include>
-      <uri>model://dienen_sim/models/sun</uri>
+      <uri>model://dienen_sim/sun</uri>
     </include>
     <include>
-      <uri>model://dienen_sim/models/floor</uri>
+      <uri>model://dienen_sim/floor</uri>
     </include>
     <include>
-      <uri>model://dienen_sim/models/dienen</uri>
+      <uri>model://dienen_sim/dienen</uri>
     </include>
   </world>
 </sdf>

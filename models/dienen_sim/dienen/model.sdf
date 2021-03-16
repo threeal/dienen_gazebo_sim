@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="dienen">
-    <plugin name='movement' filename='libmovement_plugin.so'>
+    <plugin name='movement' filename='tosshin_sim/libmovement_plugin.so'>
     </plugin>
     <link name="base">
       <pose>0 0 0.5 0 0 0</pose>
@@ -21,7 +21,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen/meshes/base.dae</uri>
+            <uri>model://dienen_sim/dienen/meshes/base.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -29,7 +29,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen/meshes/base.dae</uri>
+            <uri>model://dienen_sim/dienen/meshes/base.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -51,7 +51,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen/meshes/wheel.dae</uri>
+            <uri>model://dienen_sim/dienen/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -93,7 +93,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen/meshes/wheel.dae</uri>
+            <uri>model://dienen_sim/dienen/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -135,7 +135,7 @@
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>model://dienen/meshes/wheel.dae</uri>
+            <uri>model://dienen_sim/dienen/meshes/wheel.dae</uri>
           </mesh>
         </geometry>
       </visual>
