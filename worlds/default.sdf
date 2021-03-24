@@ -10,6 +10,7 @@
     </include>
     <include>
       <uri>model://dienen_sim/dienen</uri>
+      <pose>0 0 1.0 0 0 0</pose>
     </include>
     <include>
       <uri>model://dienen_sim/box</uri>
