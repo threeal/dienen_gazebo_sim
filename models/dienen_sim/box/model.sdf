@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="box">
+    <link name="base">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/box/meshes/box.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/box/meshes/box.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
