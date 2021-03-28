@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="dienen">
-    <plugin name="movement" filename="tosshin_sim/libmovement_plugin.so">
+    <plugin name="navigation" filename="tosshin_sim/libnavigation_plugin.so">
     </plugin>
     <link name="body_link">
       <pose>0 0 0 0 0 0</pose>
@@ -97,7 +97,7 @@
         <mass>2.234000</mass>
       </inertial>
       <sensor name="camera" type="camera">
-        <pose>0.1 0 0 0 0 0</pose>
+        <pose>0.051501 0 0.133726 0 0 0</pose>
         <plugin name="camera" filename="shisen_sim/libcamera_plugin.so">
         </plugin>
         <camera>
