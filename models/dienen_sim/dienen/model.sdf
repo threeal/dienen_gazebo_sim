@@ -60,8 +60,51 @@
           </mesh>
         </geometry>
       </visual>
+      <visual name="neck_visual">
+        <pose>-0.012158 0 0.957026 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/neck.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="camera" type="camera">
+        <pose>0.043329 0 1.11184 0 0 0</pose>
+        <plugin name="camera" filename="shisen_sim/libcamera_plugin.so">
+        </plugin>
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+      </sensor>
+      <visual name="head_visual">
+        <pose>-0.008172 0 0.978114 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/head.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="camera_visual">
+        <pose>0.033329 0 1.11184 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/camera.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
     </link>
-    <link name="neck_link">
+    <!-- <link name="neck_link">
       <pose>-0.012158 0 0.957026 0 0 0</pose>
       <inertial>
         <inertia>
@@ -131,7 +174,7 @@
           </mesh>
         </geometry>
       </visual>
-    </link>
+    </link> -->
     <link name="left_shoulder_link">
       <pose>0.017949 0.079127 0.928102 0 0 0</pose>
       <inertial>
@@ -308,7 +351,7 @@
         </geometry>
       </visual>
     </link>
-    <joint name="neck_joint" type="revolute">
+    <!-- <joint name="neck_joint" type="revolute">
       <parent>body_link</parent>
       <child>neck_link</child>
       <axis>
@@ -323,7 +366,7 @@
         <xyz>0 1 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
-    </joint>
+    </joint> -->
     <joint name="left_shoulder_joint" type="revolute">
       <parent>body_link</parent>
       <child>left_shoulder_link</child>
