@@ -60,8 +60,51 @@
           </mesh>
         </geometry>
       </visual>
+      <visual name="neck_visual">
+        <pose>-0.012158 0 0.957026 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/neck.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name="camera" type="camera">
+        <pose>0.043329 0 1.11184 0 0 0</pose>
+        <plugin name="camera" filename="shisen_sim/libcamera_plugin.so">
+        </plugin>
+        <camera>
+          <horizontal_fov>1.047</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>true</visualize>
+      </sensor>
+      <visual name="head_visual">
+        <pose>-0.008172 0 0.978114 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/head.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="camera_visual">
+        <pose>0.033329 0 1.11184 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/camera.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
     </link>
-    <link name="neck_link">
+    <!-- <link name="neck_link">
       <pose>-0.012158 0 0.957026 0 0 0</pose>
       <inertial>
         <inertia>
@@ -131,8 +174,184 @@
           </mesh>
         </geometry>
       </visual>
+    </link> -->
+    <link name="left_shoulder_link">
+      <pose>0.017949 0.079127 0.928102 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="left_shoulder_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/left_shoulder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
     </link>
-    <joint name="neck_joint" type="revolute">
+    <link name="left_upper_arm_link">
+      <pose>0.017949 0.134543 0.927832 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="left_upper_arm_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/left_upper_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="left_lower_arm_link">
+      <pose>0.017949 0.299838 0.898721 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="left_lower_arm_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/left_lower_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="left_gripper_link">
+      <pose>0.017949 0.462664 0.898669 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="left_gripper_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/left_gripper.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="right_shoulder_link">
+      <pose>0.017949 -0.078787 0.928102 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="right_shoulder_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/right_shoulder.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="right_upper_arm_link">
+      <pose>0.017949 -0.134203 0.927832 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="right_upper_arm_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/right_upper_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="right_lower_arm_link">
+      <pose>0.017949 -0.299497 0.898721 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="right_lower_arm_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/right_lower_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="right_gripper_link">
+      <pose>0.017949 -0.462324 0.898669 0 0 0</pose>
+      <inertial>
+        <inertia>
+          <ixx>0.058640</ixx>
+          <ixy>0.000124</ixy>
+          <ixz>0.000615</ixz>
+          <iyy>0.058786</iyy>
+          <iyz>0.000014</iyz>
+          <izz>1.532440</izz>
+        </inertia>
+        <mass>2.234000</mass>
+      </inertial>
+      <visual name="right_gripper_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_sim/dienen/meshes/right_gripper.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <!-- <joint name="neck_joint" type="revolute">
       <parent>body_link</parent>
       <child>neck_link</child>
       <axis>
@@ -145,6 +364,70 @@
       <child>head_link</child>
       <axis>
         <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint> -->
+    <joint name="left_shoulder_joint" type="revolute">
+      <parent>body_link</parent>
+      <child>left_shoulder_link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="left_upper_arm_joint" type="revolute">
+      <parent>left_shoulder_link</parent>
+      <child>left_upper_arm_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="left_lower_arm_joint" type="revolute">
+      <parent>left_upper_arm_link</parent>
+      <child>left_lower_arm_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="left_gripper_joint" type="revolute">
+      <parent>left_lower_arm_link</parent>
+      <child>left_gripper_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="right_shoulder_joint" type="revolute">
+      <parent>body_link</parent>
+      <child>right_shoulder_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="right_upper_arm_joint" type="revolute">
+      <parent>right_shoulder_link</parent>
+      <child>right_upper_arm_link</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="right_lower_arm_joint" type="revolute">
+      <parent>right_upper_arm_link</parent>
+      <child>right_lower_arm_link</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
+    <joint name="right_gripper_joint" type="revolute">
+      <parent>right_lower_arm_link</parent>
+      <child>right_gripper_link</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
