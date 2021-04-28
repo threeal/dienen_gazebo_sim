@@ -9,7 +9,8 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
   <exec_depend>ament_index_python</exec_depend>
   <exec_depend>launch</exec_depend>
-  <exec_depend>tosshin_sim</exec_depend>
+  <exec_depend>tosshin_gazebo_plugins</exec_depend>
+  <exec_depend>shisen_gazebo_plugins</exec_depend>
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
   <export>

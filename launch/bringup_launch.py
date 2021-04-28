@@ -36,7 +36,7 @@ def generate_launch_description():
     }
 
     package_prefix = get_package_share_directory('dienen_sim')
-    world_file = os.path.join(package_prefix, 'worlds', 'default.sdf')
+    world_file = os.path.join(package_prefix, 'worlds', 'default.world')
 
     return LaunchDescription(
         [
