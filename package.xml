@@ -8,6 +8,7 @@
   <license>MIT License</license>
   <buildtool_depend>ament_cmake</buildtool_depend>
   <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
   <exec_depend>launch</exec_depend>
   <exec_depend>tosshin_gazebo_plugins</exec_depend>
   <exec_depend>shisen_gazebo_plugins</exec_depend>
