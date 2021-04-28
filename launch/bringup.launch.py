@@ -18,11 +18,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-import os
-
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import ExecuteProcess
+import os
 from scripts import GazeboRosPaths
 
 
@@ -35,7 +34,7 @@ def generate_launch_description():
         'GAZEBO_RESOURCE_PATH': media_path,
     }
 
-    package_prefix = get_package_share_directory('dienen_sim')
+    package_prefix = get_package_share_directory('dienen_gazebo_sim')
     world_file = os.path.join(package_prefix, 'worlds', 'default.world')
 
     return LaunchDescription(

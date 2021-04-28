@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(dienen_sim)
+project(dienen_gazebo_sim)
 
 if(NOT CMAKE_C_STANDARD)
   set(CMAKE_C_STANDARD 99)

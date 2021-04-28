@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>dienen_sim</name>
+  <name>dienen_gazebo_sim</name>
   <version>0.1.0</version>
-  <description>Simulation environment for Dienen assistive robot</description>
+  <description>Gazebo environment for Dienen assistive robot simulation</description>
   <maintainer email="alfi.maulana.f@gmail.com">Alfi Maulana</maintainer>
   <license>MIT License</license>
   <buildtool_depend>ament_cmake</buildtool_depend>
