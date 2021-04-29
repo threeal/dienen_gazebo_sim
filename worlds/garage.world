@@ -41,13 +41,13 @@
     </include>
 
     <include>
-      <pose>30 -20 0.01 0 0 1.5708</pose>
-      <uri>model://willowgarage</uri>
+      <uri>model://dienen_robot</uri>
+      <pose>0 0 1.0 0 0 0</pose>
     </include>
 
     <include>
-      <uri>model://dienen_robot</uri>
-      <pose>0 0 1.0 0 0 0</pose>
+      <pose>30 -20 0.01 0 0 1.5708</pose>
+      <uri>model://willowgarage</uri>
     </include>
 
   </world>

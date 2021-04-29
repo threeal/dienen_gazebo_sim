@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.82.7</authoring_tool>
+    </contributor>
+    <created>2021-04-29T21:57:57</created>
+    <modified>2021-04-29T21:57:57</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="skin-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.6795427 0.3277781 0.1878208 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="skin-material" name="skin">
+      <instance_effect url="#skin-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="right_lower_arm-mesh" name="right_lower_arm">
+      <mesh>
+        <source id="right_lower_arm-mesh-positions">
+          <float_array id="right_lower_arm-mesh-positions-array" count="72">0.08040118 0.01585268 -0.3104354 -0.03414618 0.02988725 -0.01249998 0.08040118 -0.04185414 -0.3104354 -0.03414618 -0.03915899 -0.01249998 0.1348524 0.01585268 -0.2913258 0.0310043 0.02988725 0.01036429 0.1348524 -0.04185414 -0.2913258 0.0310043 -0.03915923 0.01036429 -0.0279479 0.05185657 -0.1181524 -0.0279479 -0.06561911 -0.09009021 0.09781157 -0.06561893 -0.08464914 0.09781157 0.05185657 -0.1127114 0.02032381 -0.05881577 -0.1955658 0.1004751 -0.05881607 -0.1683783 0.1004751 0.0197938 -0.187671 0.02032381 0.0197938 -0.2148584 0.08624613 0.01981449 -0.3390537 0.08624613 -0.04581588 -0.3390537 0.1481737 0.01981449 -0.3173204 0.1481737 -0.04581588 -0.3173204 0.1066904 0.006459295 -0.3569778 0.1066904 -0.0324608 -0.3569778 0.1434144 0.006459116 -0.3440896 0.1434144 -0.0324608 -0.3440896</float_array>
+          <technique_common>
+            <accessor source="#right_lower_arm-mesh-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="right_lower_arm-mesh-normals">
+          <float_array id="right_lower_arm-mesh-normals-array" count="132">-0.9979919 -0.01471686 -0.06160885 -0.1098316 -0.9433987 0.3129475 0.8180258 0 0.5751816 -0.007433354 0.9851025 0.171808 -0.04491472 -0.9907591 0.1279804 -0.3311457 0 0.9435797 0.130914 0.9131844 -0.385948 0.9994443 0.007745087 0.03242284 0.002732396 -0.9980021 -0.06312191 -0.9031732 -0.1023181 -0.4169045 -0.8466348 0 -0.5321743 0.04216879 -0.9913449 -0.1243274 0.9583529 0.06806963 0.2773559 0.01194465 0.9993493 -0.03403532 -0.6592419 0 -0.751931 -0.9797741 0 -0.2001073 0.8899473 0 0.4560635 -0.04491537 0.9907588 0.1279824 0.3311452 0 -0.9435799 0.1626595 0.8710469 -0.4634861 0.1626582 -0.8710483 -0.4634838 0.9845612 0 -0.1750414 -0.9968245 0 -0.07963079 -0.01128596 -0.9653038 0.2608854 0.8639256 0.117011 0.4898376 -0.06989246 0.9774726 0.1991544 -0.0449146 -0.9907591 0.1279812 -0.3311457 0 0.9435797 0.01335442 0.9510778 -0.3086628 0.9994524 0.00788778 0.03213948 0.02716434 -0.9964173 -0.08009314 -0.9022617 -0.1001824 -0.4193894 -0.8729614 -0.1162648 -0.4737311 0.04370486 -0.9912524 -0.1245334 0.9491609 0 0.3147914 0.01152139 0.9993566 -0.03396642 -0.6592402 0 -0.7519325 -0.9797741 0 -0.2001075 0.8899466 0 0.4560648 -0.04491519 0.9907588 0.127983 0.3311446 0 -0.94358 0.1626635 0.8710439 -0.4634901 0.1626568 -0.8710492 -0.4634826 0.984561 0 -0.1750419</float_array>
+          <technique_common>
+            <accessor source="#right_lower_arm-mesh-normals-array" count="44" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="right_lower_arm-mesh-map-0">
+          <float_array id="right_lower_arm-mesh-map-0-array" count="264">0.5540103 0.25 0.625 0 0.5540103 0 0.5540103 0.25 0.625 0.5 0.625 0.25 0.5540103 0.5 0.625 0.75 0.625 0.5 0.5540103 1 0.625 0.75 0.5540102 0.75 0.375 0.25 0.375 0.5 0.375 0.5 0.625 0.75 0.875 0.5 0.625 0.5 0.4667386 1 0.5540102 0.75 0.4667386 0.75 0.4667386 0.5 0.5540102 0.75 0.5540103 0.5 0.4667386 0.25 0.5540103 0.5 0.5540103 0.25 0.4667386 0.25 0.5540103 0 0.4667386 0 0.375 0.25 0.4667386 0 0.375 0 0.375 0.25 0.4667386 0.5 0.4667386 0.25 0.375 0.5 0.4667386 0.75 0.4667386 0.5 0.375 1 0.4667386 0.75 0.375 0.75 0.375 0 0.375 0.25 0.375 0 0.375 0 0.375 0.25 0.375 0.25 0.375 0.5 0.375 0.75 0.375 0.5 0.375 0.75 0.375 1 0.375 0.75 0.125 0.5 0.375 0.75 0.375 0.5 0.375 0.75 0.375 1 0.375 1 0.375 0.25 0.375 0.5 0.375 0.25 0.375 0.5 0.375 0.75 0.375 0.75 0.5540103 0.25 0.625 0.25 0.625 0 0.5540103 0.25 0.5540103 0.5 0.625 0.5 0.5540103 0.5 0.5540102 0.75 0.625 0.75 0.5540103 1 0.625 1 0.625 0.75 0.375 0.25 0.375 0.25 0.375 0.5 0.625 0.75 0.875 0.75 0.875 0.5 0.4667386 1 0.5540103 1 0.5540102 0.75 0.4667386 0.5 0.4667386 0.75 0.5540102 0.75 0.4667386 0.25 0.4667386 0.5 0.5540103 0.5 0.4667386 0.25 0.5540103 0.25 0.5540103 0 0.375 0.25 0.4667386 0.25 0.4667386 0 0.375 0.25 0.375 0.5 0.4667386 0.5 0.375 0.5 0.375 0.75 0.4667386 0.75 0.375 1 0.4667386 1 0.4667386 0.75 0.375 0 0.375 0.25 0.375 0.25 0.375 0 0.375 0 0.375 0.25 0.375 0.5 0.375 0.75 0.375 0.75 0.375 0.75 0.375 1 0.375 1 0.125 0.5 0.125 0.75 0.375 0.75 0.375 0.75 0.375 0.75 0.375 1 0.375 0.25 0.375 0.5 0.375 0.5 0.375 0.5 0.375 0.5 0.375 0.75</float_array>
+          <technique_common>
+            <accessor source="#right_lower_arm-mesh-map-0-array" count="132" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="right_lower_arm-mesh-vertices">
+          <input semantic="POSITION" source="#right_lower_arm-mesh-positions"/>
+        </vertices>
+        <triangles material="skin-material" count="44">
+          <input semantic="VERTEX" source="#right_lower_arm-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#right_lower_arm-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#right_lower_arm-mesh-map-0" offset="2" set="0"/>
+          <p>9 0 0 1 0 1 8 0 2 9 1 3 7 1 4 3 1 5 10 2 6 5 2 7 7 2 8 8 3 9 5 3 10 11 3 11 2 4 12 19 4 13 6 4 14 5 5 15 3 5 16 7 5 17 15 6 18 11 6 19 14 6 20 13 7 21 11 7 22 10 7 23 12 8 24 10 8 25 9 8 26 12 9 27 8 9 28 15 9 29 2 10 30 15 10 31 0 10 32 2 11 33 13 11 34 12 11 35 6 12 36 14 12 37 13 12 38 0 13 39 14 13 40 4 13 41 20 14 42 17 14 43 16 14 44 0 15 45 17 15 46 2 15 47 19 16 48 4 16 49 6 16 50 18 17 51 0 17 52 4 17 53 21 18 54 22 18 55 23 18 56 18 19 57 20 19 58 16 19 59 21 20 60 19 20 61 17 20 62 19 21 63 22 21 64 18 21 65 9 22 66 3 22 67 1 22 68 9 23 69 10 23 70 7 23 71 10 24 72 11 24 73 5 24 74 8 25 75 1 25 76 5 25 77 2 26 78 17 26 79 19 26 80 5 27 81 1 27 82 3 27 83 15 28 84 8 28 85 11 28 86 13 29 87 14 29 88 11 29 89 12 30 90 13 30 91 10 30 92 12 31 93 9 31 94 8 31 95 2 32 96 12 32 97 15 32 98 2 33 99 6 33 100 13 33 101 6 34 102 4 34 103 14 34 104 0 35 105 15 35 106 14 35 107 20 36 108 21 36 109 17 36 110 0 37 111 16 37 112 17 37 113 19 38 114 18 38 115 4 38 116 18 39 117 16 39 118 0 39 119 21 40 120 20 40 121 22 40 122 18 41 123 22 41 124 20 41 125 21 42 126 23 42 127 19 42 128 19 43 129 23 43 130 22 43 131</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="right_lower_arm" name="right_lower_arm" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#right_lower_arm-mesh" name="right_lower_arm">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="skin-material" target="#skin-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
