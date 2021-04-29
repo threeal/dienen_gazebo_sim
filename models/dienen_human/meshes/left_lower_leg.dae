@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.82.7</authoring_tool>
+    </contributor>
+    <created>2021-04-29T14:57:03</created>
+    <modified>2021-04-29T14:57:03</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="pants-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.06662594 0.03820438 0.3762622 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="pants-material" name="pants">
+      <instance_effect url="#pants-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="left_lower_leg-mesh" name="left_lower_leg">
+      <mesh>
+        <source id="left_lower_leg-mesh-positions">
+          <float_array id="left_lower_leg-mesh-positions-array" count="72">-0.1147157 -0.06375962 -0.1376605 -0.03092414 -0.03711622 0.0149486 -0.1147157 0.08573997 -0.1021826 -0.03092414 0.0436623 0.02705043 0.02262485 -0.06375962 -0.1505517 0.03406947 -0.03711622 -0.02094775 0.02262485 0.08573997 -0.1150738 0.03406947 0.0436623 -0.008845984 -0.08823692 -0.009589135 -0.3015232 -0.08823692 0.08036291 -0.2987258 0.001758575 -0.009589135 -0.3015232 0.001758575 0.08036291 -0.2987258 -0.07489842 2.52835e-4 -0.409326 -0.07489842 0.070845 -0.4071311 -0.004272043 2.52835e-4 -0.409326 -0.004272043 0.070845 -0.4071311 -0.08421808 -0.007951974 -0.4453215 -0.08421808 0.08127063 -0.442547 0.005047619 -0.007951974 -0.4453215 0.005047619 0.08127063 -0.442547 -0.06516623 0.01219803 -0.4803444 -0.06516623 0.06333535 -0.4787542 -0.01400417 0.01219803 -0.4803444 -0.01400417 0.06333535 -0.4787542</float_array>
+          <technique_common>
+            <accessor source="#left_lower_leg-mesh-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="left_lower_leg-mesh-normals">
+          <float_array id="left_lower_leg-mesh-normals-array" count="132">-0.8617596 -0.1171388 0.4936082 0.02752965 0.9556249 0.2932969 0.9954792 0.02193099 -0.0924142 0.01537173 -0.9863792 0.1637676 -0.002599716 0.999613 -0.02769762 0.4793626 -0.1300281 0.867931 0 -0.9958584 -0.09091824 -0.9874369 0.004911422 -0.1579374 0.9931571 0.02696579 -0.1136304 0 -0.9412431 -0.3377301 0.9676128 -0.007845878 0.2523173 0 0.9961678 -0.08746272 0.9984463 0.001732051 -0.05569642 -0.9924672 0.003807365 -0.1224512 0 -0.8667792 -0.4986922 -0.9676132 -0.007845222 0.2523159 0 -0.974992 0.22224 0 0.9592985 0.2823943 0 0.0310803 -0.9995169 0 0.8960871 -0.4438782 0.8818596 0.01465475 -0.4712844 -0.8818597 0.01465463 -0.471284 -0.847953 -0.07853609 0.5242211 0.1898919 0.9196366 0.3438165 0.9947538 0.01515638 -0.1011683 0.105644 -0.975834 0.1912783 0 0.9995717 -0.0292657 0.4793632 -0.1300287 0.8679305 0 -0.9958584 -0.09091824 -0.9904275 0.03187191 -0.1343047 0.9907784 0.004211544 -0.1354275 -0.02985632 -0.9475923 -0.3180841 0.9676131 -0.007845103 0.2523162 0 0.9961679 -0.08746248 0.9984463 0.001731693 -0.05569666 -0.9924673 0.003807961 -0.1224507 0 -0.8667793 -0.4986922 -0.9676129 -0.007845878 0.2523169 0 -0.974992 0.2222401 0 0.9592984 0.2823944 0 0.0310803 -0.9995169 0 0.8960871 -0.4438783 0.8818597 0.01465469 -0.471284 -0.8818596 0.01465487 -0.4712844</float_array>
+          <technique_common>
+            <accessor source="#left_lower_leg-mesh-normals-array" count="44" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="left_lower_leg-mesh-map-0">
+          <float_array id="left_lower_leg-mesh-map-0-array" count="264">0.625 0 0.375 0.25 0.375 0 0.625 0.25 0.375 0.5 0.375 0.25 0.375 0.5 0.625 0.75 0.375 0.75 0.375 0.75 0.625 1 0.375 1 0.375 0.5 0.375 0.25 0.375 0.25 0.625 0.5 0.875 0.75 0.625 0.75 0.375 0.75 0.375 1 0.375 0.75 0.375 0 0.375 0.25 0.375 0 0.375 0.75 0.375 0.5 0.375 0.5 0.375 0.75 0.375 1 0.375 0.75 0.375 0.5 0.375 0.75 0.375 0.5 0.375 0.5 0.375 0.25 0.375 0.25 0.375 0.75 0.375 0.5 0.375 0.5 0.375 0 0.375 0.25 0.375 0 0.375 1 0.375 0.75 0.375 0.75 0.375 0.25 0.375 0 0.375 0 0.375 0.75 0.375 1 0.375 0.75 0.375 0.5 0.375 0.25 0.375 0.25 0.375 0.5 0.125 0.75 0.125 0.5 0.375 0.5 0.375 0.25 0.375 0.25 0.375 0.75 0.375 0.5 0.375 0.5 0.375 0 0.375 0.25 0.375 0 0.625 0 0.625 0.25 0.375 0.25 0.625 0.25 0.625 0.5 0.375 0.5 0.375 0.5 0.625 0.5 0.625 0.75 0.375 0.75 0.625 0.75 0.625 1 0.375 0.5 0.375 0.5 0.375 0.25 0.625 0.5 0.875 0.5 0.875 0.75 0.375 0.75 0.375 1 0.375 1 0.375 0 0.375 0.25 0.375 0.25 0.375 0.75 0.375 0.75 0.375 0.5 0.375 0.75 0.375 1 0.375 1 0.375 0.5 0.375 0.75 0.375 0.75 0.375 0.5 0.375 0.5 0.375 0.25 0.375 0.75 0.375 0.75 0.375 0.5 0.375 0 0.375 0.25 0.375 0.25 0.375 1 0.375 1 0.375 0.75 0.375 0.25 0.375 0.25 0.375 0 0.375 0.75 0.375 1 0.375 1 0.375 0.5 0.375 0.5 0.375 0.25 0.375 0.5 0.375 0.75 0.125 0.75 0.375 0.5 0.375 0.5 0.375 0.25 0.375 0.75 0.375 0.75 0.375 0.5 0.375 0 0.375 0.25 0.375 0.25</float_array>
+          <technique_common>
+            <accessor source="#left_lower_leg-mesh-map-0-array" count="132" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="left_lower_leg-mesh-vertices">
+          <input semantic="POSITION" source="#left_lower_leg-mesh-positions"/>
+        </vertices>
+        <triangles material="pants-material" count="44">
+          <input semantic="VERTEX" source="#left_lower_leg-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#left_lower_leg-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#left_lower_leg-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 6 1 4 2 1 5 6 2 6 5 2 7 4 2 8 4 3 9 1 3 10 0 3 11 6 4 12 9 4 13 2 4 14 7 5 15 1 5 16 5 5 17 10 6 18 12 6 19 14 6 20 0 7 21 9 7 22 8 7 23 4 8 24 11 8 25 6 8 26 4 9 27 8 9 28 10 9 29 15 10 30 18 10 31 19 10 32 11 11 33 13 11 34 9 11 35 10 12 36 15 12 37 11 12 38 8 13 39 13 13 40 12 13 41 16 14 42 22 14 43 18 14 44 13 15 45 16 15 46 12 15 47 14 16 48 16 16 49 18 16 50 15 17 51 17 17 52 13 17 53 23 18 54 20 18 55 21 18 56 19 19 57 21 19 58 17 19 59 18 20 60 23 20 61 19 20 62 16 21 63 21 21 64 20 21 65 1 22 66 3 22 67 2 22 68 3 23 69 7 23 70 6 23 71 6 24 72 7 24 73 5 24 74 4 25 75 5 25 76 1 25 77 6 26 78 11 26 79 9 26 80 7 27 81 3 27 82 1 27 83 10 28 84 8 28 85 12 28 86 0 29 87 2 29 88 9 29 89 4 30 90 10 30 91 11 30 92 4 31 93 0 31 94 8 31 95 15 32 96 14 32 97 18 32 98 11 33 99 15 33 100 13 33 101 10 34 102 14 34 103 15 34 104 8 35 105 9 35 106 13 35 107 16 36 108 20 36 109 22 36 110 13 37 111 17 37 112 16 37 113 14 38 114 12 38 115 16 38 116 15 39 117 19 39 118 17 39 119 23 40 120 22 40 121 20 40 122 19 41 123 23 41 124 21 41 125 18 42 126 22 42 127 23 42 128 16 43 129 17 43 130 21 43 131</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="left_lower_leg" name="left_lower_leg" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#left_lower_leg-mesh" name="left_lower_leg">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="pants-material" target="#pants-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
