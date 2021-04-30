@@ -5,20 +5,12 @@
     <plugin name="dienen_robot_navigation" filename="libtosshin_navigation_plugin.so">
     </plugin>
 
-    <link name="body_link">
+    <link name="lower_body_link">
       <pose>0 0 0 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
-      <collision name="body_collision">
+      <collision name="lower_body_collision">
         <pose>0 0 0.5 0 0 0</pose>
         <geometry>
           <cylinder>
@@ -46,16 +38,30 @@
           </mesh>
         </geometry>
       </visual>
+    </link>
+
+    <link name="upper_body_link">
+      <pose>0 0 1.12161 0 0 0</pose>
+      <inertial>
+        <mass>10.0</mass>
+      </inertial>
       <visual name="upper_body_visual">
-        <pose>0 0 0.747742 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/upper_body.dae</uri>
           </mesh>
         </geometry>
       </visual>
+    </link>
+
+    <link name="depth_camera_link">
+      <pose>0.10267 0 1.37778 0 0 0</pose>
+      <inertial>
+        <mass>10.0</mass>
+      </inertial>
       <visual name="depth_camera_visual">
-        <pose>0.036739 0 0.921716 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/depth_camera.dae</uri>
@@ -65,17 +71,9 @@
     </link>
 
     <link name="neck_link">
-      <pose>-0.012158 0 0.957026 0 0 0</pose>
+      <pose>-0.018237 0 1.43554 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
       <visual name="neck_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -88,21 +86,36 @@
     </link>
 
     <link name="head_link">
-      <pose>-0.008172 0 0.978114 0 0 0</pose>
+      <pose>-0.012258 0 1.46717 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
+      <visual name="head_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/meshes/head.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="camera_link">
+      <pose>0.049994 0 1.66776 0 0 0</pose>
+      <inertial>
+        <mass>10.0</mass>
+      </inertial>
+      <visual name="camera_visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/meshes/camera.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
       <sensor name="camera" type="camera">
-        <pose>0.051501 0 0.133726 0 0 0</pose>
-        <plugin name="camera" filename="libshisen_camera_plugin.so">
+        <pose>0.01 0 0 0 0 0</pose>
+        <plugin name="dienen_robot_camera" filename="libshisen_camera_plugin.so">
         </plugin>
         <camera>
           <horizontal_fov>1.047</horizontal_fov>
@@ -119,36 +132,12 @@
         <update_rate>30</update_rate>
         <visualize>true</visualize>
       </sensor>
-      <visual name="head_visual">
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://dienen_robot/meshes/head.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
-      <visual name="camera_visual">
-        <pose>0.041501 0 0.133726 0 0 0</pose>
-        <geometry>
-          <mesh>
-            <uri>model://dienen_robot/meshes/camera.dae</uri>
-          </mesh>
-        </geometry>
-      </visual>
     </link>
 
     <link name="left_shoulder_link">
-      <pose>0.017949 0.079127 0.928102 0 0 0</pose>
+      <pose>0.026924 0.11869 1.39215 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
       <visual name="left_shoulder_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -161,17 +150,9 @@
     </link>
 
     <link name="left_upper_arm_link">
-      <pose>0.017949 0.134543 0.927832 0 0 0</pose>
+      <pose>0.026924 0.201815 1.39175 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
       <visual name="left_upper_arm_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -184,17 +165,9 @@
     </link>
 
     <link name="left_lower_arm_link">
-      <pose>0.017949 0.299838 0.898721 0 0 0</pose>
+      <pose>0.026924 0.449757 1.34808 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
       <visual name="left_lower_arm_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -207,17 +180,9 @@
     </link>
 
     <link name="left_gripper_link">
-      <pose>0.017949 0.462664 0.898669 0 0 0</pose>
+      <pose>0.026924 0.693996 1.348 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>100.0</mass>
       </inertial>
       <visual name="left_gripper_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -230,17 +195,9 @@
     </link>
 
     <link name="right_shoulder_link">
-      <pose>0.017949 -0.078787 0.928102 0 0 0</pose>
+      <pose>0.026924 -0.11818 1.39215 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
       <visual name="right_shoulder_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -253,17 +210,9 @@
     </link>
 
     <link name="right_upper_arm_link">
-      <pose>0.017949 -0.134203 0.927832 0 0 0</pose>
+      <pose>0.026924 -0.201304 1.39175 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
       <visual name="right_upper_arm_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -276,17 +225,9 @@
     </link>
 
     <link name="right_lower_arm_link">
-      <pose>0.017949 -0.299497 0.898721 0 0 0</pose>
+      <pose>0.026924 -0.449246 1.34808 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>10.0</mass>
       </inertial>
       <visual name="right_lower_arm_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -299,17 +240,9 @@
     </link>
 
     <link name="right_gripper_link">
-      <pose>0.017949 -0.462324 0.898669 0 0 0</pose>
+      <pose>0.026924 -0.693486 1.348 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>100.0</mass>
       </inertial>
       <visual name="right_gripper_visual">
         <pose>0 0 0 0 0 0</pose>
@@ -321,8 +254,24 @@
       </visual>
     </link>
 
+    <joint name="upper_body_joint" type="fixed">
+      <parent>lower_body_link</parent>
+      <child>upper_body_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+
+    <joint name="depth_camera_joint" type="fixed">
+      <parent>upper_body_link</parent>
+      <child>depth_camera_link</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+      </axis>
+    </joint>
+
     <joint name="neck_joint" type="fixed">
-      <parent>body_link</parent>
+      <parent>upper_body_link</parent>
       <child>neck_link</child>
       <axis>
         <xyz>0 0 1</xyz>
@@ -333,16 +282,23 @@
       <parent>neck_link</parent>
       <child>head_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint name="camera_joint" type="fixed">
+      <parent>head_link</parent>
+      <child>camera_link</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
       </axis>
     </joint>
 
     <joint name="left_shoulder_joint" type="fixed">
-      <pose>0 0 0 0 0 0</pose>
-      <parent>body_link</parent>
+      <parent>upper_body_link</parent>
       <child>left_shoulder_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
@@ -350,7 +306,11 @@
       <parent>left_shoulder_link</parent>
       <child>left_upper_arm_link</child>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>-1.04719755</lower>
+          <upper>1.04719755</upper>
+        </limit>
       </axis>
     </joint>
 
@@ -358,7 +318,7 @@
       <parent>left_upper_arm_link</parent>
       <child>left_lower_arm_link</child>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-1 0 0</xyz>
       </axis>
     </joint>
 
@@ -366,12 +326,12 @@
       <parent>left_lower_arm_link</parent>
       <child>left_gripper_link</child>
       <axis>
-        <xyz>1 0 0</xyz>
+        <xyz>-1 0 0</xyz>
       </axis>
     </joint>
 
     <joint name="right_shoulder_joint" type="fixed">
-      <parent>body_link</parent>
+      <parent>upper_body_link</parent>
       <child>right_shoulder_link</child>
       <axis>
         <xyz>0 -1 0</xyz>
@@ -382,7 +342,11 @@
       <parent>right_shoulder_link</parent>
       <child>right_upper_arm_link</child>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-1.04719755</lower>
+          <upper>1.04719755</upper>
+        </limit>
       </axis>
     </joint>
 
@@ -390,7 +354,7 @@
       <parent>right_upper_arm_link</parent>
       <child>right_lower_arm_link</child>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>1 0 0</xyz>
       </axis>
     </joint>
 
@@ -398,7 +362,7 @@
       <parent>right_lower_arm_link</parent>
       <child>right_gripper_link</child>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>1 0 0</xyz>
       </axis>
     </joint>
 

@@ -145,10 +145,10 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
-      <collision name="left_upper_arm_collision">
+      <collision name="right_upper_arm_collision">
         <geometry>
           <mesh>
-            <uri>model://dienen_human/meshes/left_upper_arm.dae</uri>
+            <uri>model://dienen_human/meshes/right_upper_arm.dae</uri>
           </mesh>
         </geometry>
       </collision>
