@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
+<sdf version="1.7">
   <model name="dienen_human">
 
     <plugin name="dienen_human_legs" filename="libbeine_legs_plugin.so">
@@ -145,10 +145,10 @@
       <inertial>
         <mass>0.1</mass>
       </inertial>
-      <collision name="left_upper_arm_collision">
+      <collision name="right_upper_arm_collision">
         <geometry>
           <mesh>
-            <uri>model://dienen_human/meshes/left_upper_arm.dae</uri>
+            <uri>model://dienen_human/meshes/right_upper_arm.dae</uri>
           </mesh>
         </geometry>
       </collision>
