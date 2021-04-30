@@ -2,7 +2,7 @@
 <sdf version="1.5">
   <model name="dienen_robot">
 
-    <plugin name="navigation" filename="libtosshin_navigation_plugin.so">
+    <plugin name="dienen_robot_navigation" filename="libtosshin_navigation_plugin.so">
     </plugin>
 
     <link name="body_link">

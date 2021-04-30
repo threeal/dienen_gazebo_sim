@@ -2,41 +2,29 @@
 <sdf version="1.5">
   <model name="dienen_human">
 
-    <plugin name="legs" filename="libbeine_legs_plugin.so">
+    <plugin name="dienen_human_legs" filename="libbeine_legs_plugin.so">
+      <left_hip_pitch_joint>left_upper_leg_joint</left_hip_pitch_joint>
+      <left_knee_pitch_joint>left_lower_leg_joint</left_knee_pitch_joint>
+      <left_ankle_pitch_joint>left_foot_joint</left_ankle_pitch_joint>
+      <right_hip_pitch_joint>right_upper_leg_joint</right_hip_pitch_joint>
+      <right_knee_pitch_joint>right_lower_leg_joint</right_knee_pitch_joint>
+      <right_ankle_pitch_joint>right_foot_joint</right_ankle_pitch_joint>
+      <joint_force_strength>1000.0</joint_force_strength>
+      <joint_force_smoothness>0.2</joint_force_smoothness>
     </plugin>
 
     <link name="torso_link">
+      <must_be_base_link>true</must_be_base_link>
       <pose>0 0 1.13312 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
-      <collision name="body_collision">
-        <pose>0 0 0.5 0 0 0</pose>
+      <collision name="torso_collision">
         <geometry>
-          <cylinder>
-            <radius>0.2</radius>
-            <length>1.0</length>
-          </cylinder>
+          <mesh>
+            <uri>model://dienen_human/meshes/torso.dae</uri>
+          </mesh>
         </geometry>
-        <surface>
-          <friction>
-            <ode>
-              <mu>10</mu>
-              <mu2>10</mu2>
-              <fdir1>0 0 0</fdir1>
-              <slip1>0</slip1>
-              <slip2>0</slip2>
-            </ode>
-          </friction>
-        </surface>
       </collision>
       <visual name="torso_visual">
         <geometry>
@@ -50,16 +38,15 @@
     <link name="neck_link">
       <pose>0 0 1.55055 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="neck_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/neck.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="neck_visual">
         <geometry>
           <mesh>
@@ -72,16 +59,15 @@
     <link name="head_link">
       <pose>0 0 1.62812 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="head_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/head.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="head_visual">
         <geometry>
           <mesh>
@@ -94,16 +80,15 @@
     <link name="left_upper_arm_link">
       <pose>-0.031476 0.168975 1.42403 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="left_upper_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/left_upper_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_upper_arm_visual">
         <geometry>
           <mesh>
@@ -116,16 +101,15 @@
     <link name="left_lower_arm_link">
       <pose>-0.033132 0.274336 1.20635 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="left_lower_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/left_lower_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_lower_arm_visual">
         <geometry>
           <mesh>
@@ -138,16 +122,15 @@
     <link name="left_hand_link">
       <pose>0.082831 0.27036 0.857133 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="left_hand_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/left_hand.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_hand_visual">
         <geometry>
           <mesh>
@@ -160,16 +143,15 @@
     <link name="right_upper_arm_link">
       <pose>-0.031476 -0.168975 1.42403 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="left_upper_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/left_upper_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_upper_arm_visual">
         <geometry>
           <mesh>
@@ -182,16 +164,15 @@
     <link name="right_lower_arm_link">
       <pose>-0.033132 -0.274336 1.20635 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="right_lower_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/right_lower_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_lower_arm_visual">
         <geometry>
           <mesh>
@@ -204,16 +185,15 @@
     <link name="right_hand_link">
       <pose>0.082831 -0.27036 0.857133 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>0.1</mass>
       </inertial>
+      <collision name="right_hand_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/right_hand.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_hand_visual">
         <geometry>
           <mesh>
@@ -226,16 +206,15 @@
     <link name="left_upper_leg_link">
       <pose>0.01491 0.071566 0.923397 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>2.0</mass>
       </inertial>
+      <collision name="left_upper_leg_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/left_upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_upper_leg_visual">
         <geometry>
           <mesh>
@@ -248,16 +227,15 @@
     <link name="left_lower_leg_link">
       <pose>-0.01491 0.12524 0.547677 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>2.0</mass>
       </inertial>
+      <collision name="left_lower_leg_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/left_lower_leg.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_lower_leg_visual">
         <geometry>
           <mesh>
@@ -270,16 +248,15 @@
     <link name="left_foot_link">
       <pose>-0.049698 0.163011 0.085638 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>2.0</mass>
       </inertial>
+      <collision name="left_foot_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/left_foot.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_foot_visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
@@ -293,16 +270,15 @@
     <link name="right_upper_leg_link">
       <pose>0.01491 -0.071566 0.923397 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>2.0</mass>
       </inertial>
+      <collision name="right_upper_leg_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/right_upper_leg.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_upper_leg_visual">
         <geometry>
           <mesh>
@@ -315,16 +291,15 @@
     <link name="right_lower_leg_link">
       <pose>-0.01491 -0.12524 0.547677 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>2.0</mass>
       </inertial>
+      <collision name="right_lower_leg_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/right_lower_leg.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_lower_leg_visual">
         <geometry>
           <mesh>
@@ -337,16 +312,15 @@
     <link name="right_foot_link">
       <pose>-0.049698 -0.163011 0.085638 0 0 0</pose>
       <inertial>
-        <inertia>
-          <ixx>0.058640</ixx>
-          <ixy>0.000124</ixy>
-          <ixz>0.000615</ixz>
-          <iyy>0.058786</iyy>
-          <iyz>0.000014</iyz>
-          <izz>1.532440</izz>
-        </inertia>
-        <mass>2.234000</mass>
+        <mass>2.0</mass>
       </inertial>
+      <collision name="right_foot_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_human/meshes/right_foot.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_foot_visual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
@@ -369,7 +343,7 @@
       <parent>neck_link</parent>
       <child>head_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
@@ -377,7 +351,7 @@
       <parent>torso_link</parent>
       <child>left_upper_arm_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
@@ -385,7 +359,7 @@
       <parent>left_upper_arm_link</parent>
       <child>left_lower_arm_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
@@ -393,7 +367,7 @@
       <parent>left_lower_arm_link</parent>
       <child>left_hand_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
@@ -401,7 +375,7 @@
       <parent>torso_link</parent>
       <child>right_upper_arm_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
@@ -409,7 +383,7 @@
       <parent>right_upper_arm_link</parent>
       <child>right_lower_arm_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
@@ -417,55 +391,79 @@
       <parent>right_lower_arm_link</parent>
       <child>right_hand_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
       </axis>
     </joint>
 
-    <joint name="left_upper_leg_joint" type="fixed">
+    <joint name="left_upper_leg_joint" type="revolute">
       <parent>torso_link</parent>
       <child>left_upper_leg_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0.0</lower>
+          <upper>0.785398</upper>
+        </limit>
       </axis>
     </joint>
 
-    <joint name="left_lower_leg_joint" type="fixed">
+    <joint name="left_lower_leg_joint" type="revolute">
       <parent>left_upper_leg_link</parent>
       <child>left_lower_leg_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0.0</upper>
+        </limit>
       </axis>
     </joint>
 
-    <joint name="left_foot_joint" type="fixed">
+    <joint name="left_foot_joint" type="revolute">
       <parent>left_lower_leg_link</parent>
       <child>left_foot_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0.0</lower>
+          <upper>0.785398</upper>
+        </limit>
       </axis>
     </joint>
 
-    <joint name="right_upper_leg_joint" type="fixed">
+    <joint name="right_upper_leg_joint" type="revolute">
       <parent>torso_link</parent>
       <child>right_upper_leg_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0.0</lower>
+          <upper>0.785398</upper>
+        </limit>
       </axis>
     </joint>
 
-    <joint name="right_lower_leg_joint" type="fixed">
+    <joint name="right_lower_leg_joint" type="revolute">
       <parent>right_upper_leg_link</parent>
       <child>right_lower_leg_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0.0</upper>
+        </limit>
       </axis>
     </joint>
 
-    <joint name="right_foot_joint" type="fixed">
+    <joint name="right_foot_joint" type="revolute">
       <parent>right_lower_leg_link</parent>
       <child>right_foot_link</child>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0.0</lower>
+          <upper>0.785398</upper>
+        </limit>
       </axis>
     </joint>
 
