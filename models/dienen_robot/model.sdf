@@ -1,9 +1,8 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
+<sdf version="1.7">
   <model name="dienen_robot">
 
-    <plugin name="dienen_robot_navigation" filename="libtosshin_navigation_plugin.so">
-    </plugin>
+    <plugin name="dienen_robot_navigation" filename="libtosshin_navigation_plugin.so" />
 
     <link name="lower_body_link">
       <pose>0 0 0 0 0 0</pose>

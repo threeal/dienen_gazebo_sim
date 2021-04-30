@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
+<sdf version="1.7">
   <model name="dienen_human">
 
     <plugin name="dienen_human_legs" filename="libbeine_legs_plugin.so">
