@@ -10,12 +10,10 @@
         <mass>10.0</mass>
       </inertial>
       <collision name="lower_body_collision">
-        <pose>0 0 0.5 0 0 0</pose>
         <geometry>
-          <cylinder>
-            <radius>0.2</radius>
-            <length>1.0</length>
-          </cylinder>
+          <mesh>
+            <uri>model://dienen_robot/collisions/lower_body_collision.dae</uri>
+          </mesh>
         </geometry>
         <surface>
           <friction>
@@ -44,8 +42,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="upper_body_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/upper_body_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="upper_body_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/upper_body.dae</uri>
@@ -59,8 +63,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="depth_camera_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/depth_camera_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="depth_camera_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/depth_camera.dae</uri>
@@ -74,8 +84,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="neck_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/neck_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="neck_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/neck.dae</uri>
@@ -89,8 +105,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="head_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/head_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="head_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/head.dae</uri>
@@ -104,8 +126,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="camera_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/camera_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="camera_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/camera.dae</uri>
@@ -138,8 +166,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="left_shoulder_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/neck_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_shoulder_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/left_shoulder.dae</uri>
@@ -153,8 +187,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="left_upper_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/left_upper_arm_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_upper_arm_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/left_upper_arm.dae</uri>
@@ -168,8 +208,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="left_lower_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/left_lower_arm_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_lower_arm_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/left_lower_arm.dae</uri>
@@ -183,8 +229,14 @@
       <inertial>
         <mass>100.0</mass>
       </inertial>
+      <collision name="left_gripper_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/left_gripper_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="left_gripper_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/left_gripper.dae</uri>
@@ -198,8 +250,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="right_shoulder_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/right_shoulder_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_shoulder_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/right_shoulder.dae</uri>
@@ -213,8 +271,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="right_upper_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/right_upper_arm_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_upper_arm_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/right_upper_arm.dae</uri>
@@ -228,8 +292,14 @@
       <inertial>
         <mass>10.0</mass>
       </inertial>
+      <collision name="right_lower_arm_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/right_lower_arm_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_lower_arm_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/right_lower_arm.dae</uri>
@@ -243,8 +313,14 @@
       <inertial>
         <mass>100.0</mass>
       </inertial>
+      <collision name="right_gripper_collision">
+        <geometry>
+          <mesh>
+            <uri>model://dienen_robot/collisions/right_gripper_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
       <visual name="right_gripper_visual">
-        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://dienen_robot/meshes/right_gripper.dae</uri>
@@ -256,17 +332,11 @@
     <joint name="upper_body_joint" type="fixed">
       <parent>lower_body_link</parent>
       <child>upper_body_link</child>
-      <axis>
-        <xyz>0 0 1</xyz>
-      </axis>
     </joint>
 
     <joint name="depth_camera_joint" type="fixed">
       <parent>upper_body_link</parent>
       <child>depth_camera_link</child>
-      <axis>
-        <xyz>-1 0 0</xyz>
-      </axis>
     </joint>
 
     <joint name="neck_joint" type="fixed">
@@ -288,9 +358,6 @@
     <joint name="camera_joint" type="fixed">
       <parent>head_link</parent>
       <child>camera_link</child>
-      <axis>
-        <xyz>-1 0 0</xyz>
-      </axis>
     </joint>
 
     <joint name="left_shoulder_joint" type="fixed">
