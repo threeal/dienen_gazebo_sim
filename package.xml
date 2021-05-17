@@ -6,6 +6,7 @@
   <description>Gazebo environment for Dienen assistive robot simulation</description>
   <maintainer email="alfi.maulana.f@gmail.com">Alfi Maulana</maintainer>
   <license>MIT License</license>
+  <url>https://github.com/threeal/dienen_gazebo_sim</url>
   <buildtool_depend>ament_cmake</buildtool_depend>
   <exec_depend>ament_index_python</exec_depend>
   <exec_depend>beine_gazebo_plugins</exec_depend>
